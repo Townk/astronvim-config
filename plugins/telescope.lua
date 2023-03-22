@@ -11,9 +11,9 @@ return {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope-symbols.nvim", -- optional, select symbols
+      "nvim-telescope/telescope-symbols.nvim",   -- optional, select symbols
       "nvim-telescope/telescope-ui-select.nvim", -- optional, for using telescope in more places
-      "nvim-tree/nvim-web-devicons", -- optional, for icons
+      "nvim-tree/nvim-web-devicons",             -- optional, for icons
       "debugloop/telescope-undo.nvim",
       "nvim-telescope/telescope-file-browser.nvim",
     },
@@ -88,14 +88,14 @@ return {
       telescope.core.load_extension("fzf")
       telescope.core.load_extension("frecency")
       telescope.core.load_extension("ui-select")
-      -- telescope.core.load_extension("textcase")
+      telescope.core.load_extension("textcase")
       -- telescope.core.load_extension("notify")
     end,
   },
   {
     -- Fuzzy Finder Algorithm which requires local dependencies to be built. Only load if `make` is available
     "nvim-telescope/telescope-fzf-native.nvim",
-    run = "make",
+    build = "make",
     cond = vim.fn.executable("make") == 1,
     dependencies = {
       "nvim-telescope/telescope.nvim",

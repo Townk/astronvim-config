@@ -128,6 +128,8 @@ return {
     -- [[ Keymaps: Navigation ]]
     ["[d"] = { vim.diagnostic.goto_prev, desc = "Previous diagnostic" },
     ["]d"] = { vim.diagnostic.goto_next, desc = "Next diagnostic" },
+    -- [[ Keymaps: TextCase ]]
+    ["ga."] = { "<cmd>TextCaseOpenTelescope<CR>", desc = "Switch case" },
   },
   --
 
@@ -136,6 +138,7 @@ return {
     -- Move lines
     ["J"] = { ":m '>+1<CR>gv=gv" },
     ["K"] = { ":m '<-2<CR>gv=gv" },
+    ["ga."] = { "<cmd>TextCaseOpenTelescope<CR>", desc = "Switch case" },
   },
   --
 
