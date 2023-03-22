@@ -2,11 +2,47 @@
 return {
   opt = {
     -- set to true or false etc.
+    spell = false, -- sets vim.opt.spell
+    -- Some servers have issues with backup files, see #649
+    backup = false,
+    writebackup = false,
+    -- Which-Key helper
+    timeout = true,
+    timeoutlen = 300,
+    -- Set highlight on search
+    hlsearch = true,
+    -- Make line numbers default
     relativenumber = true, -- sets vim.opt.relativenumber
     number = true, -- sets vim.opt.number
-    spell = false, -- sets vim.opt.spell
-    signcolumn = "auto", -- sets vim.opt.signcolumn to auto
-    wrap = false, -- sets vim.opt.wrap
+    -- Enable cursor line
+    cursorline = true,
+    -- Enable mouse mode
+    mouse = "a",
+    mousemoveevent = true,
+    -- Enable break indent
+    breakindent = true,
+    -- Save undo history
+    undofile = true,
+    -- Tab indent
+    smarttab = true,
+    autoindent = true,
+    smartindent = true,
+    cindent = true,
+    expandtab = true,
+    wrap = false,
+    shiftround = true,
+    -- Case insensitive searching UNLESS /C or capital in search
+    ignorecase = true,
+    smartcase = true,
+    -- Decrease update time
+    updatetime = 250,
+    signcolumn = "yes:1",
+    -- Set colorscheme
+    termguicolors = true,
+    -- Set completeopt to have a better completion experience
+    completeopt = "longest,menuone",
+    -- Visual changes
+    scrolloff = 2,
   },
   g = {
     mapleader = " ", -- sets vim.g.mapleader
@@ -18,12 +54,3 @@ return {
     ui_notifications_enabled = true, -- disable notifications when toggling UI elements
   },
 }
--- If you need more control, you can use the function()...end notation
--- return function(local_vim)
---   local_vim.opt.relativenumber = true
---   local_vim.g.mapleader = " "
---   local_vim.opt.whichwrap = vim.opt.whichwrap - { 'b', 's' } -- removing option from list
---   local_vim.opt.shortmess = vim.opt.shortmess + { I = true } -- add to option list
---
---   return local_vim
--- end
