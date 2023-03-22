@@ -3,7 +3,6 @@ return {
   "AstroNvim/astrocommunity",
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.java" },
-  { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.nix" },
   { import = "astrocommunity.pack.python" },
@@ -11,6 +10,8 @@ return {
   { import = "astrocommunity.pack.typescript" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
+  { import = "astrocommunity.bars-and-lines.scope-nvim" },
+  { import = "astrocommunity.bars-and-lines.statuscol-nvim" },
   {
     "m4xshen/smartcolumn.nvim",
     opts = {
