@@ -91,10 +91,10 @@ return {
     ["<leader>w<"] = { "<C-W><", desc = "Decrease width" },
     ["<leader>w_"] = { "<C-W>_", desc = "Max out the height" },
     ["<leader>w|"] = { "<C-W>|", desc = "Max out the width" },
-    ["<leader>wh"] = { "<C-W><C-H>", desc = "Go to the left window" },
-    ["<leader>wj"] = { "<C-W><C-J>", desc = "Go to the down window" },
-    ["<leader>wk"] = { "<C-W><C-K>", desc = "Go to the up window" },
-    ["<leader>wl"] = { "<C-W><C-L>", desc = "Go to the right window" },
+    ["<leader>wh"] = { "<cmd>KittyNavigateLeft<cr>", desc = "Go to the left window" },
+    ["<leader>wj"] = { "<cmd>KittyNavigateDown<cr>", desc = "Go to the down window" },
+    ["<leader>wk"] = { "<cmd>KittyNavigateUp<cr>", desc = "Go to the up window" },
+    ["<leader>wl"] = { "<cmd>KittyNavigateRight<cr>", desc = "Go to the right window" },
     ["<leader>wq"] = { "<C-W>q", desc = "Quit a window" },
     ["<leader>ws"] = { "<C-W>s", desc = "Split window" },
     ["<leader>wT"] = { "<C-W>T", desc = "Break out into new tab" },
@@ -102,6 +102,10 @@ return {
     ["<leader>ww"] = { "<C-W>w", desc = "Switch windows" },
     ["<leader>wx"] = { "<C-W>x", desc = "Swap current with next" },
     ["<leader>wo"] = { "<C-W>ozz", desc = "Swap current with next" },
+    ["<C-h>"] = { ":KittyNavigateLeft<cr>", desc = "Move cursor to window in the left" },
+    ["<C-j>"] = { ":KittyNavigateDown<cr>", desc = "Move cursor to window below" },
+    ["<C-k>"] = { ":KittyNavigateUp<cr>", desc = "Move cursor to window above" },
+    ["<C-l>"] = { ":KittyNavigateRight<cr>", desc = "Move cursor to window in the right" },
     --
 
     -- [[ Keymaps: Visualise ]]
