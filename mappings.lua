@@ -16,6 +16,7 @@ return {
     ["<leader>/"] = false,
     ["<leader>c"] = false,
     ["<leader>C"] = false,
+    ["<leader>e"] = false,
     ["<leader>h"] = false,
     ["<leader>n"] = false,
     ["<leader>o"] = false,
