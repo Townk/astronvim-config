@@ -14,4 +14,8 @@ return {
     event = "BufRead",
     opts = {},
   },
+  {
+    "editorconfig/editorconfig-vim",
+    event = "BufRead",
+  },
 }
