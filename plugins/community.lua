@@ -11,6 +11,7 @@ return {
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.bars-and-lines.smartcolumn-nvim" },
   { import = "astrocommunity.bars-and-lines.scope-nvim" },
+  { import = "astrocommunity.bars-and-lines.heirline-mode-text-statusline" },
   { import = "astrocommunity.bars-and-lines.statuscol-nvim" },
   {
     "m4xshen/smartcolumn.nvim",
