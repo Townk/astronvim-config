@@ -13,6 +13,7 @@ return {
   -- Normal mappings
   n = {
     -- Shortcuts I like to disable
+    ["|"] = false,
     ["<leader>/"] = false,
     ["<leader>c"] = false,
     ["<leader>C"] = false,
