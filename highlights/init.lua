@@ -9,4 +9,10 @@ return {
   CursorLineNr = { fg = "#FFFFFF", bg = "#282c34" },
   CursorLineSign = { bg = "#282c34" },
   CursorLineFold = { bg = "#282c34" },
+  LeapBackdrop = { link = "Comment" },
+  LeapMatch = {
+    fg = "white", -- for light themes, set to 'black' or similar
+    bold = true,
+    nocombine = true,
+  },
 }
