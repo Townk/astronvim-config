@@ -3,18 +3,14 @@ return {
   -- use mason-lspconfig to configure LSP installations
   {
     "williamboman/mason-lspconfig.nvim",
-    -- overrides `require("mason-lspconfig").setup(...)`
     opts = {
+      -- Make sure no other configuration add an "ensure installed" LSP
       ensure_installed = {},
     },
   },
   -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
   {
     "jay-babu/mason-null-ls.nvim",
-    -- overrides `require("mason-null-ls").setup(...)`
-    opts = {
-      ensure_installed = {},
-    },
     config = function(_, opts)
       local mason_null_ls = require("mason-null-ls")
       local null_ls = require("null-ls")
@@ -27,11 +23,15 @@ return {
         end,
       })
     end,
+    opts = {
+      -- Make sure no other configuration add an "ensure installed" analyzer
+      ensure_installed = {},
+    },
   },
   {
     "jay-babu/mason-nvim-dap.nvim",
-    -- overrides `require("mason-nvim-dap").setup(...)`
     opts = {
+      -- Make sure no other configuration add an "ensure installed" dap
       ensure_installed = {},
     },
   },

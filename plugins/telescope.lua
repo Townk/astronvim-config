@@ -1,10 +1,4 @@
 local utils = require("astronvim.utils")
-local telescope = {
-  core = require("telescope"),
-  themes = require("telescope.themes"),
-  action = require("telescope.actions"),
-  actionlayout = require("telescope.actions.layout"),
-}
 
 return {
   {
@@ -17,7 +11,23 @@ return {
       "debugloop/telescope-undo.nvim",
       "nvim-telescope/telescope-file-browser.nvim",
     },
+    config = function(...)
+      local telescope = require("telescope")
+      require("plugins.configs.telescope")(...)
+      telescope.load_extension("undo")
+      telescope.load_extension("file_browser")
+      telescope.load_extension("fzf")
+      telescope.load_extension("frecency")
+      telescope.load_extension("ui-select")
+      telescope.load_extension("textcase")
+      -- telescope.core.load_extension("notify")
+    end,
     opts = function(_, opts)
+      local telescope = {
+        themes = require("telescope.themes"),
+        action = require("telescope.actions"),
+        actionlayout = require("telescope.actions.layout"),
+      }
       return utils.extend_tbl(opts, {
         extensions = {
           fzf = {
@@ -80,16 +90,6 @@ return {
           },
         },
       })
-    end,
-    config = function(...)
-      require("plugins.configs.telescope")(...)
-      telescope.core.load_extension("undo")
-      telescope.core.load_extension("file_browser")
-      telescope.core.load_extension("fzf")
-      telescope.core.load_extension("frecency")
-      telescope.core.load_extension("ui-select")
-      telescope.core.load_extension("textcase")
-      -- telescope.core.load_extension("notify")
     end,
   },
   {

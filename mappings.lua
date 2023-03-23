@@ -3,8 +3,8 @@
 -- Please use this mappings table to set keyboard mapping since this is the
 -- lower level configuration and more robust one. (which-key will
 -- automatically pick-up stored data by this setting.)
-local telescopeBuiltins = require("telescope.builtin")
-local userFunctions = require("user.functions")
+local telescope = require("telescope.builtin")
+local myFunctions = require("user.functions")
 
 return {
   -- first key is the mode
@@ -37,13 +37,13 @@ return {
     --
 
     -- [[ Keymaps: Buffers ]]
-    ["<leader><space>"] = { telescopeBuiltins.buffers, desc = "Switch to buffer" },
+    ["<leader><space>"] = { telescope.buffers, desc = "Switch to buffer" },
     ["<leader>bl"] = { ':b#<cr>g`"zv', desc = "Buffer Last Used", silent = true },
     ["<leader>bn"] = { ':bnext<cr>g`"zv', desc = "Buffer Next", silent = true },
     ["<leader>bp"] = { ':bprev<cr>g`"zv', desc = "Buffer Previous", silent = true },
-    ["<leader>bx"] = { userFunctions.closeBufferSelection, desc = "Pick close buffer" },
+    ["<leader>bx"] = { myFunctions.closeBufferSelection, desc = "Pick close buffer" },
     ["zx"] = { require("astronvim.utils.buffer").close, desc = "Close buffer" },
-    ["zX"] = { userFunctions.closeBufferForced, desc = "Force close buffer", silent = true },
+    ["zX"] = { myFunctions.closeBufferForced, desc = "Force close buffer", silent = true },
     --
 
     -- [[ Keymaps: Find ]]
@@ -57,29 +57,29 @@ return {
     ["<leader>fo"] = false,
     ["<leader>ft"] = false,
     ["<leader>fW"] = false,
-    ['<leader>f"'] = { telescopeBuiltins.registers, desc = "Find registers" },
+    ['<leader>f"'] = { telescope.registers, desc = "Find registers" },
     ["<leader>f."] = { "<cmd>Telescope file_browser<cr>", desc = "File browser" },
-    ["<leader>fd"] = { telescopeBuiltins.diagnostics, desc = "Find diagnostics" },
-    ["<leader>fg"] = { telescopeBuiltins.git_files, desc = "Find in project" },
+    ["<leader>fd"] = { telescope.diagnostics, desc = "Find diagnostics" },
+    ["<leader>fg"] = { telescope.git_files, desc = "Find in project" },
     ["<leader>fi"] = { name = "in..." },
-    ["<leader>fid"] = { userFunctions.findInCurrentDir, desc = "Find in directory" },
-    ["<leader>fif"] = { telescopeBuiltins.live_grep, desc = "Find in files (Grep)" },
-    ["<leader>fiF"] = { userFunctions.findInAllFiles, desc = "Find in ALL files (Grep)" },
-    ["<leader>fp"] = { userFunctions.findInConfigFiles, desc = "Find in NeoVim config" },
-    ["<leader>fr"] = { telescopeBuiltins.oldfiles, desc = "Find recent files" },
-    ["<leader>fs"] = { userFunctions.findStringInBuffer, desc = "Find string in buffer" },
-    ["<leader>fu"] = { userFunctions.findInUserConfigFiles, desc = "Find in NeoVim user config" },
-    ["<leader>fw"] = { telescopeBuiltins.grep_string, desc = "Find word under cursor" },
+    ["<leader>fid"] = { myFunctions.findInCurrentDir, desc = "Find in directory" },
+    ["<leader>fif"] = { telescope.live_grep, desc = "Find in files (Grep)" },
+    ["<leader>fiF"] = { myFunctions.findInAllFiles, desc = "Find in ALL files (Grep)" },
+    ["<leader>fp"] = { myFunctions.findInConfigFiles, desc = "Find in NeoVim config" },
+    ["<leader>fr"] = { telescope.oldfiles, desc = "Find recent files" },
+    ["<leader>fs"] = { myFunctions.findStringInBuffer, desc = "Find string in buffer" },
+    ["<leader>fu"] = { myFunctions.findInUserConfigFiles, desc = "Find in NeoVim user config" },
+    ["<leader>fw"] = { telescope.grep_string, desc = "Find word under cursor" },
     --
 
     -- [[ Keymaps: Help ]]
-    ["<leader>hh"] = { telescopeBuiltins.help_tags, desc = "Search help" },
-    ["<leader>hm"] = { telescopeBuiltins.man_pages, desc = "Search man pages" },
-    ["<leader>hk"] = { telescopeBuiltins.keymaps, desc = "Search keymaps" },
-    ["<leader>ho"] = { telescopeBuiltins.vim_options, desc = "Search options" },
-    ["<leader>hc"] = { telescopeBuiltins.commands, desc = "Search commands" },
-    ["<leader>hf"] = { telescopeBuiltins.highlights, desc = "Search highlights" },
-    ["<leader>ht"] = { telescopeBuiltins.colorscheme, desc = "Search themes" },
+    ["<leader>hh"] = { telescope.help_tags, desc = "Search help" },
+    ["<leader>hm"] = { telescope.man_pages, desc = "Search man pages" },
+    ["<leader>hk"] = { telescope.keymaps, desc = "Search keymaps" },
+    ["<leader>ho"] = { telescope.vim_options, desc = "Search options" },
+    ["<leader>hc"] = { telescope.commands, desc = "Search commands" },
+    ["<leader>hf"] = { telescope.highlights, desc = "Search highlights" },
+    ["<leader>ht"] = { telescope.colorscheme, desc = "Search themes" },
     --
 
     -- [[ Keymaps: Windows ]]
@@ -111,7 +111,7 @@ return {
     -- [[ Keymaps: Visualise ]]
     ["<leader>vd"] = { vim.diagnostic.open_float, desc = "View diagnostics" },
     ["<leader>vm"] = { "<cmd>messages<cr>", desc = "View messages" },
-    ["<leader>vb"] = { userFunctions.viewNotifications, desc = "View notifications" },
+    ["<leader>vb"] = { myFunctions.viewNotifications, desc = "View notifications" },
     --
 
     -- [[ Keymaps: Open ]]
@@ -122,7 +122,7 @@ return {
     ["<leader>gr"] = false,
     ["<leader>gd"] = { "<cmd>DiffviewOpen<cr>", desc = "View Git diff" },
     ["<leader>gh"] = { "<cmd>DiffviewFileHistory %<cr>", desc = "View Git history" },
-    ["<leader>gU"] = { userFunctions.unstageBuffer, desc = "Unstage Git buffer" },
+    ["<leader>gU"] = { myFunctions.unstageBuffer, desc = "Unstage Git buffer" },
     --
 
     -- [[ Keymaps: Navigation ]]

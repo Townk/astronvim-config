@@ -12,8 +12,6 @@ return {
   {
     "johmsalas/text-case.nvim",
     event = "BufRead",
-    config = function(...)
-      require("textcase").setup(...)
-    end,
+    opts = {},
   },
 }
