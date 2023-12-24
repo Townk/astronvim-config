@@ -3,6 +3,7 @@ return {
   opt = {
     -- set to true or false etc.
     spell = false, -- sets vim.opt.spell
+    spelllang = "en_US",
     -- Some servers have issues with backup files, see #649
     backup = false,
     writebackup = false,
@@ -42,7 +43,10 @@ return {
     -- Set completeopt to have a better completion experience
     completeopt = "longest,menuone",
     -- Visual changes
-    scrolloff = 2,
+    scrolloff = 5,
+    -- Current commands
+    showcmd = true,
+    showcmdloc = "statusline",
   },
   g = {
     mapleader = " ",                 -- sets vim.g.mapleader

@@ -1,0 +1,18 @@
+return {
+  -- "bashls",
+  -- "clangd",
+  -- "gradle_ls",
+  -- "html",
+  -- "jsonls",
+  -- "kotlin_language_server",
+  -- "lua_ls",
+  -- "marksman",
+  -- "pyright",
+  -- "rnix",
+  -- "ruff_lsp",
+  -- "rust_analyzer",
+  -- "taplo",
+  -- "tsserver",
+  -- "vimls",
+  -- "yamlls",
+}

@@ -9,10 +9,15 @@ return {
   CursorLineNr = { fg = "#FFFFFF", bg = "#282c34" },
   CursorLineSign = { bg = "#282c34" },
   CursorLineFold = { bg = "#282c34" },
+  StatusLine = { bg = "#181a1f" },
   LeapBackdrop = { link = "Comment" },
   LeapMatch = {
     fg = "white", -- for light themes, set to 'black' or similar
     bold = true,
     nocombine = true,
   },
+  WinBar = { bg = "#20252c" },
+  TreesitterContext = { bg = "#20252c", fg = "#5c6370" },
+  TreesitterContextLineNumber = { bg = "#20252c", fg = "#5c6370" },
+  TreesitterContextSeparator = { bg = "#1B1D22", fg = "#181a1f" },
 }
