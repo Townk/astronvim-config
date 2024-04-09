@@ -16,23 +16,21 @@ return {
   -- File-tree navigation [<leader>op]
   {
     "nvim-neo-tree/neo-tree.nvim",
-    lazy = false,
     opts = function(_, opts)
+      local events = require("neo-tree.events")
+      local handlers = opts.event_handlers or {}
+      table.insert(handlers, {
+        event = events.FILE_OPENED,
+        handler = function(_)
+          require("neo-tree.command").execute({ action = "close" })
+        end,
+      })
+
       return utils.extend_tbl(opts, {
-        add_blank_line_top = true,
-        enable_git_status = false,
-        source_selector = {
-          winbar = true,
-          statusline = false,
-        },
-        default_source = "filesystem",
-        event_handlers = {
-          {
-            event = "file_opened",
-            handler = function(_)
-              --auto close
-              require("neo-tree.command").execute({ action = "close" })
-            end,
+        event_handlers = handlers,
+        window = {
+          mappings = {
+            ["<tab>"] = "child_or_open",
           },
         },
       })
