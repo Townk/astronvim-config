@@ -7,6 +7,11 @@ return {
     event = "BufRead",
   },
 
+  {
+    "Civitasv/cmake-tools.nvim",
+    event = "BufRead",
+  },
+
   -- When using TreeSitter, show cursor context
   {
     "nvim-treesitter/nvim-treesitter-context",
